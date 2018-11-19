@@ -16,7 +16,7 @@ float k=1.62;//conductividad termica
 float p=2.71;//densidad
 float v=k/(cp*p);//coeficiente de difusion,constante
 float T=100.0;//temperatura=cte
-float dt=0.5;
+float dt=10;
 float dx=1.0;
 float dy=1.0;//iguales a 1 porque ada posicion es de un centimetro
 

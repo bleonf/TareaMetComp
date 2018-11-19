@@ -25,7 +25,7 @@ datos6=np.genfromtxt("datsODE.txt",skip_header=(39992+204),skip_footer=204)
 datos7=np.genfromtxt("datsODE.txt",skip_header=(39992+255),skip_footer=153)
 
 
-datos8=np.genfromtxt("datsODE.txt",skip_header=(39992+306,skip_footer=102)
+datos8=np.genfromtxt("datsODE.txt",skip_header=(39992+306),skip_footer=102)
 
 
 datos9=np.genfromtxt("datsODE.txt",skip_header=(39992+357),skip_footer=51)
