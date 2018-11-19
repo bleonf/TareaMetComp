@@ -1,9 +1,12 @@
 
 
-Resultados_hw4.pdf:resultados_hw4.tex grafsODE.pdf
+Resultados_hw4.pdf:resultados_hw4.tex grafsODE.pdf grafsODE2.pdf 3d2.pdf 3d3.pdf
 	pdflatex resultados_hw4.tex
 
 grafsODE.pdf:Plots_hw4.py datsODE.txt a.out a2.out ODE.cpp PDE.cpp datsPDE.txt
+	python Plots_hw4.py
+
+grafsODE2.pdf:Plots_hw4.py datsODE.txt a.out a2.out ODE.cpp PDE.cpp datsPDE.txt
 	python Plots_hw4.py
 
 datsODE.txt:datsODE.out
@@ -15,7 +18,7 @@ datsPDE.txt:datsPDE.out
 datsPDE.out: a2.out
 	mv a2.out datsPDE.out
 
-a2.out:PDE.cpp
+a2.out:PDE.cpp 
 	g++ -o a2.out PDE.cpp
 
 datsODE.out:a.out
