@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pylab as plt
 from mpl_toolkits import mplot3d
 
-datos=np.genfromtxt("datsODE.txt",skip_footer=459,usecols=0,1,2,3,4)
+datos=np.genfromtxt("datsODE.txt",skip_footer=459,usecols=(0,1,2,3,4))
 x=datos[:,2]
 y=datos[:,3]
 t=datos[:,4]
