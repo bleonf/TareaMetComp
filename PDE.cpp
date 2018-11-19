@@ -106,6 +106,17 @@ for(int k=0;k<10000;k++)
 				}
 			}
 		}
+	if (k==100 or k==1500)//imprime 2 pasos intermedios
+	{
+		for (int i=0;i<51;i++)
+		{
+			for (int j=0;j<51;j++)
+			{
+			cout<<posfuturo[i][j]<<" ";
+			}
+		cout<<"\n";
+		}
+	}
 	}//Acaba los pasos que recorre k)
 for (int i=0;i<51;i++)//imprime el ultimo paso
 	{
@@ -171,6 +182,18 @@ for(int k=0;k<10000;k++)
 				}
 			}
 		}
+	if (k==100 or k==1500)//imprime dos pasos intermedios
+	{
+		for (int i=0;i<51;i++)
+		{
+			for (int j=0;j<51;j++)
+			{
+			cout<<posfuturo[i][j]<<" ";
+			}
+		cout<<"\n";
+		}
+	}
+
 	}//acaba recorrido sobre k
 
 for (int i=0;i<51;i++)//imprime ultimo paso
@@ -244,6 +267,17 @@ for(int k=0;k<10000;k++)
 				}
 			}
 		}
+	if (k==100 or k==1500)//imprime dos pasos intermedios
+	{
+		for (int i=0;i<51;i++)
+		{
+			for (int j=0;j<51;j++)
+			{
+			cout<<posfuturo[i][j]<<" ";
+			}
+		cout<<"\n";
+		}
+	}
 	}//acaba recorrido sobre k
 
 for (int i=0;i<51;i++)//imprime ultimo paso
