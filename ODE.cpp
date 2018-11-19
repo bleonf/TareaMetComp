@@ -165,8 +165,8 @@ int main()
 	cout<<velx[0]<<" "<<vely[0]<<" "<<posx[0]<<" "<<posy[0]<<" "<<tiempo[0]<<"\n";
 	for(int i=2;i<pasos;i++)
 		{
-		velx[i]=vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
-		vely[i]=vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
+		velx[i]=velx[i-1]+vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
+		vely[i]=vely[i-1]+vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
 		posx[i-1]=posx[i-2]+(velx[i-2]*h);
 		posy[i-1]=posy[i-2]+(vely[i-2]*h);
 		cout<<velx[i-1]<<" "<<vely[i-1]<<" "<<posx[i-1]<<" "<<posy[i-1]<<" "<<tiempo[i-1]<<"\n";

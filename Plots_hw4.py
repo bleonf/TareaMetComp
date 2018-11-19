@@ -2,16 +2,21 @@ import numpy as np
 import matplotlib.pylab as plt
 from mpl_toolkits import mplot3d
 
-datos=np.genfromtxt("datsODE.txt",skip_footer=102)
+datos=np.genfromtxt("datsODE.txt",skip_footer=153)
 x=datos[:,2]
 y=datos[:,3]
 t=datos[:,4]
 
-datos2=np.genfromtxt("datsODE.txt",skip_header=39992,skip_footer=51)
+datos2=np.genfromtxt("datsODE.txt",skip_header=39992,skip_footer=102)
 print datos2
 
-datos3=np.genfromtxt("datsODE.txt",skip_header=(39992+51))
+datos3=np.genfromtxt("datsODE.txt",skip_header=(39992+51),skip_footer=51)
 print datos3
+
+datos4=np.genfromtxt("datsODE.txt",skip_header=(39992+102))
+print datos4
+
+
 
 xx=np.linspace(0,50,51)
 yy=np.linspace(0,50,51)
@@ -49,4 +54,13 @@ ax3.set_xlabel('x')
 ax3.set_ylabel('y')
 ax3.set_zlabel('temperatura(C)');
 fig2.savefig("3d3.pdf")
+
+fig3 = plt.figure()
+ax4 = plt.axes(projection='3d')
+ax4.plot_surface(X, Y, datos3, rstride=1, cstride=1,
+                cmap='viridis', edgecolor='green')
+ax4.set_xlabel('x')
+ax4.set_ylabel('y')
+ax4.set_zlabel('temperatura(C)');
+fig2.savefig("3d4.pdf")
 

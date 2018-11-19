@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 using std::cout;
-
+const float  PI_F=3.1415926;
 float pos[51][51];//para cada borde con una interseccion en todo el centro de la varilla
 float posfuturo[51][51];
 float futuro(float fut, float v,  float xmenos, float xmas,float x, float ymenos,float ymas, float dt);
@@ -30,6 +30,10 @@ for (int i=0;i<51;i++)
 		if (pow((pow((i-26),2)+pow((j-26),2)),0.5)<=10)//condicion de circulo alrededor del centro (26,26)
 			{
 			pos[i][j]=T;
+			}
+		else
+			{
+			pos[i][j]=10;
 			}
 		}
 	}
@@ -62,7 +66,7 @@ for (int i=0;i<51;i++)
 		}
 	}
 /////////////////////////////////////////////////////////////////////////////////////
-///////codigo para 1000 pasos de la condicion 1
+///////codigo para 10000 pasos de la condicion 1
 for(int k=0;k<10000;k++)
 	{
 	for (int i=0;i<51;i++)//hace el cambio de posiciones reiterando las condiciones de frontera y de la varilla
@@ -116,6 +120,20 @@ for (int i=0;i<51;i++)//imprime el ultimo paso
 
 ///////condicion 2
 ////////////////////bordes abiertos
+for (int i=0;i<51;i++)
+	{
+	for (int j=0;j<51;j++)
+		{
+		if (pow((pow((i-26),2)+pow((j-26),2)),0.5)<=10)//condicion de circulo alrededor del centro (26,26)
+			{
+			pos[i][j]=T;
+			}
+		else
+			{
+			pos[i][j]=10;
+			}
+		}
+	}
 //para cada paso ya no se fijan los bordes en 10 grados pero la varilla si se pone a 100 grados siempre
 for(int k=0;k<10000;k++)
 	{
@@ -134,9 +152,9 @@ for(int k=0;k<10000;k++)
 				//futuro(posfuturo[i][j],v,pos[i-1][j],pos[i+1][j],pos[i][j],pos[i][j-1],pos[i][j+1],dt);
 				posfuturo[i][j]=futuro(pos[i][j],v,pos[i-1][j],pos[i+1][j],pos[i][j],pos[i][j-1],pos[i][j+1],dt);
 				}
-				//cout<<pos[i][j]<<" ";
+				
 			}
-			//cout<<"\n";
+			
 		} 
 	
 	for (int i=0;i<51;i++)//recurrencia devuelve posicion para el siguiente paso
@@ -171,16 +189,20 @@ for (int i=0;i<51;i++)//imprime ultimo paso
 ///////condicion 3
 ////////////////////fronteras periodicas
 
-//for (int i=0;i<51;i++)
-//	{
-//	for (int j=0;j<51;j++)
-//		{
-//		if ((i==0 or i==50) and (j==00 or j==50) )//condicion de circulo alrededor del centro (26,26)
-//			{
-//			pos[i][j]=10.0;
-//			}
-//		}
-//	}
+for (int i=0;i<51;i++)
+	{
+	for (int j=0;j<51;j++)
+		{
+		if (pow((pow((i-26),2)+pow((j-26),2)),0.5)<=10)//condicion de circulo alrededor del centro (26,26)
+			{
+			pos[i][j]=T;
+			}
+		else
+			{
+			pos[i][j]=10;//asumimos que todo el resto empieza en 10 grados
+			}
+		}
+	}
 for(int k=0;k<10000;k++)
 	{
 
@@ -193,14 +215,19 @@ for(int k=0;k<10000;k++)
 				{
 				pos[i][j]=T;
 				}
+			if ((i==0 or i==50) or (j==0 or j==50))//condicion periodica
+				{
+				pos[i][j]=sin(((k % 200)/200.0)*6.28)*25.0;//frontera sinusoidal, frec 200 pasos(100 segundos) de amplitud 25.0
+				posfuturo[i][j]=sin((((k+1) % 200)/200.0)*6.28)*25.0;//frontera sinusoidal, frec 200 pasos(100 segundos) de amplitud 25.0
+				}
 			if((i!=0 and i!=50) and (j!=0 and j!=50))
 				{					
 				//futuro(posfuturo[i][j],v,pos[i-1][j],pos[i+1][j],pos[i][j],pos[i][j-1],pos[i][j+1],dt);
 				posfuturo[i][j]=futuro(pos[i][j],v,pos[i-1][j],pos[i+1][j],pos[i][j],pos[i][j-1],pos[i][j+1],dt);
 				}
-				//cout<<pos[i][j]<<" ";
+				
 			}
-			//cout<<"\n";
+			
 		} 
 	
 	for (int i=0;i<51;i++)//recurrencia devuelve posicion para el siguiente paso
