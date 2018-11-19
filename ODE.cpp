@@ -16,19 +16,19 @@ float rads(float angulo);
 
 //ecu final: x_n+1=-g-(abs(x_n)*x_n)(2h)+x_n-1
 
-float posx[500];
-float posy[500];
-float velx[500];
-float vely[500];
-float tiempo[500];
+float posx[5000];
+float posy[5000];
+float velx[5000];
+float vely[5000];
+float tiempo[5000];
 int main()
 {
 	float g=10.0;
 	float c=0.2;
 	float m=0.2;
 	
-	float h=0.001;
-	float pasos=500;
+	float h=0.0001;
+	float pasos=5000;
 	//tiempo final=h*pasos
 	for(int i=0;i<pasos;i++)
 		tiempo[i]=h*i;
