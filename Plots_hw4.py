@@ -49,7 +49,7 @@ plt.plot(x[9998:14997],y[9998:14997],c="black")
 plt.plot(x[14997:19996],y[14997:19996],c="green")
 plt.plot(x[19996:24995],y[19996:24995],c="yellow")
 plt.plot(x[25995:29994],y[25995:29994],c="brown")
-plt.plt(x[29994:34993],y[29994:34993],c="orange")
+plt.plot(x[29994:34993],y[29994:34993],c="orange")
 plt.plot(x[34993:39992],y[34993:39992],c="purple")
 
 plt.ylabel("posicion y")
@@ -70,11 +70,11 @@ plt.ylabel("distancia en x")
 plt.xlabel("tiempo (s)")
 ode2.savefig("grafsODE2.pdf")
 
-10grados=plt.figure()
+grados=plt.figure()
 plt.plot(x[4999:9998],y[4999:9998],c="blue")
 plt.ylabel("distancia en y")
 plt.xlabel("distancia en x")
-10grados.savefig("10grados.pdf")
+grados.savefig("grados.pdf")
 
 
 
