@@ -70,6 +70,12 @@ plt.ylabel("distancia en x")
 plt.xlabel("tiempo (s)")
 ode2.savefig("grafsODE2.pdf")
 
+10grados=plt.figure()
+plt.plot(x[4999:9998],y[4999:9998],c="blue")
+plt.ylabel("distancia en y")
+plt.xlabel("distancia en x")
+10grados.savefig("10grados.pdf")
+
 
 
 ###################

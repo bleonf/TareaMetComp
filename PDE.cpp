@@ -14,7 +14,7 @@ float d=10;//diametro o 10 cuadrados
 float cp=820.0;//C_p
 float k=1.62;//conductividad termica
 float p=2.71;//densidad
-float v=k/(cp*p);//coeficiente de difusion,constante
+float v=0.0001;//coeficiente de difusion,constante
 float T=100.0;//temperatura=cte
 float dt=0.5;
 float dx=1.0;
