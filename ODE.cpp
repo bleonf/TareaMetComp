@@ -44,8 +44,8 @@ int main()
 	cout<<velx[0]<<" "<<vely[0]<<" "<<posx[1]<<" "<<posy[1]<<" "<<tiempo[1]<<"\n";
 	for(int i=2;i<pasos;i++)
 		{
-		velx[i]=vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
-		vely[i]=vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
+		velx[i]=velx[i-1]+vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
+		vely[i]=vely[i-1]+vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
 		posx[i-1]=posx[i-2]+(velx[i-2]*h);
 		posy[i-1]=posy[i-2]+(vely[i-2]*h);
 		cout<<velx[i-1]<<" "<<vely[i-1]<<" "<<posx[i-2]<<" "<<posy[i-2]<<" "<<tiempo[i-1]<<"\n";
@@ -61,15 +61,15 @@ int main()
 	cout<<velx[0]<<" "<<vely[0]<<" "<<posx[0]<<" "<<posy[0]<<" "<<tiempo[0]<<"\n";
 	for(int i=2;i<pasos;i++)
 		{
-		velx[i]=vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),-1*velx[i-2],0.0);
-		vely[i]=vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),-1*vely[i-2],g);
+		velx[i]=velx[i-1]+vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),-1*velx[i-2],0.0);
+		vely[i]=vely[i-1]+vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),-1*vely[i-2],g);
 		posx[i-1]=posx[i-2]+(velx[i-2]*h);
 		posy[i-1]=posy[i-2]+(vely[i-2]*h);
 		cout<<velx[i-1]<<" "<<vely[i-1]<<" "<<posx[i-1]<<" "<<posy[i-1]<<" "<<tiempo[i-1]<<"\n";
 		}
 ////////////////////////20	
-	velx[0]=300*cos(rads(45.0));
-	vely[0]=300*sin(rads(45.0));
+	velx[0]=300*cos(rads(20.0));
+	vely[0]=300*sin(rads(20.0));
 	velx[1]=velx[0]-(((abs(velx[0])*(velx[0])))*h);
 	vely[1]=vely[0]-((10.0+(abs(vely[0])*(vely[0])))*h);//10 de gravedad en Y
 	
@@ -78,15 +78,15 @@ int main()
 	cout<<velx[0]<<" "<<vely[0]<<" "<<posx[0]<<" "<<posy[0]<<" "<<tiempo[0]<<"\n";
 	for(int i=2;i<pasos;i++)
 		{
-		velx[i]=vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
-		vely[i]=vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
+		velx[i]=velx[i-1]+vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
+		vely[i]=vely[i-1]+vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
 		posx[i-1]=posx[i-2]+(velx[i-2]*h);
 		posy[i-1]=posy[i-2]+(vely[i-2]*h);
 		cout<<velx[i-1]<<" "<<vely[i-1]<<" "<<posx[i-1]<<" "<<posy[i-1]<<" "<<tiempo[i-1]<<"\n";
 		}
 ////////////////////////30	
-	velx[0]=300*cos(rads(45));
-	vely[0]=300*sin(rads(45));
+	velx[0]=300*cos(rads(30.0));
+	vely[0]=300*sin(rads(30.0));
 	velx[1]=velx[0]-(((abs(velx[0])*(velx[0])))*h);
 	vely[1]=vely[0]-((10.0+(abs(vely[0])*(vely[0])))*h);//10 de gravedad en Y
 	
@@ -95,15 +95,15 @@ int main()
 	cout<<velx[0]<<" "<<vely[0]<<" "<<posx[0]<<" "<<posy[0]<<" "<<tiempo[0]<<"\n";
 	for(int i=2;i<pasos;i++)
 		{
-		velx[i]=vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
-		vely[i]=vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
+		velx[i]=velx[i-1]+vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
+		vely[i]=vely[i-1]+vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
 		posx[i-1]=posx[i-2]+(velx[i-2]*h);
 		posy[i-1]=posy[i-2]+(vely[i-2]*h);
 		cout<<velx[i-1]<<" "<<vely[i-1]<<" "<<posx[i-1]<<" "<<posy[i-1]<<" "<<tiempo[i-1]<<"\n";
 		}
 ////////////////////////40	
-	velx[0]=300*cos(rads(45));
-	vely[0]=300*sin(rads(45));
+	velx[0]=300*cos(rads(40.0));
+	vely[0]=300*sin(rads(40.0));
 	velx[1]=velx[0]-(((abs(velx[0])*(velx[0])))*h);
 	vely[1]=vely[0]-((10.0+(abs(vely[0])*(vely[0])))*h);//10 de gravedad en Y
 	
@@ -112,15 +112,15 @@ int main()
 	cout<<velx[0]<<" "<<vely[0]<<" "<<posx[0]<<" "<<posy[0]<<" "<<tiempo[0]<<"\n";
 	for(int i=2;i<pasos;i++)
 		{
-		velx[i]=vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
-		vely[i]=vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
+		velx[i]=velx[i-1]+vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
+		vely[i]=vely[i-1]+vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
 		posx[i-1]=posx[i-2]+(velx[i-2]*h);
 		posy[i-1]=posy[i-2]+(vely[i-2]*h);
 		cout<<velx[i-1]<<" "<<vely[i-1]<<" "<<posx[i-1]<<" "<<posy[i-1]<<" "<<tiempo[i-1]<<"\n";
 		}
 ////////////////////////50	
-	velx[0]=300*cos(rads(45));
-	vely[0]=300*sin(rads(45));
+	velx[0]=300*cos(rads(50.0));
+	vely[0]=300*sin(rads(50.0));
 	velx[1]=velx[0]-(((abs(velx[0])*(velx[0])))*h);
 	vely[1]=vely[0]-((10.0+(abs(vely[0])*(vely[0])))*h);//10 de gravedad en Y
 	
@@ -129,8 +129,8 @@ int main()
 	cout<<velx[0]<<" "<<vely[0]<<" "<<posx[0]<<" "<<posy[0]<<" "<<tiempo[0]<<"\n";
 	for(int i=2;i<pasos;i++)
 		{
-		velx[i]=vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
-		vely[i]=vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
+		velx[i]=velx[i-1]+vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
+		vely[i]=vely[i-1]+vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
 		posx[i-1]=posx[i-2]+(velx[i-2]*h);
 		posy[i-1]=posy[i-2]+(vely[i-2]*h);
 		cout<<velx[i-1]<<" "<<vely[i-1]<<" "<<posx[i-1]<<" "<<posy[i-1]<<" "<<tiempo[i-1]<<"\n";
@@ -147,8 +147,8 @@ int main()
 	cout<<velx[0]<<" "<<vely[0]<<" "<<posx[0]<<" "<<posy[0]<<" "<<tiempo[0]<<"\n";
 	for(int i=2;i<pasos;i++)
 		{
-		velx[i]=vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
-		vely[i]=vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
+		velx[i]=velx[i-1]+vel(h,velx[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),velx[i-2],0.0);
+		vely[i]=vely[i-1]+vel(h,vely[i-1],pow(((velx[i-1]*velx[i-1])+(vely[i-1]*vely[i-1])),0.5),vely[i-2],g);
 		posx[i-1]=posx[i-2]+(velx[i-2]*h);
 		posy[i-1]=posy[i-2]+(vely[i-2]*h);
 		cout<<velx[i-1]<<" "<<vely[i-1]<<" "<<posx[i-1]<<" "<<posy[i-1]<<" "<<tiempo[i-1]<<"\n";
